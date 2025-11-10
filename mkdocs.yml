@@ -1,11 +1,36 @@
-site_name: a7Bz3tQ9
+site_name: notes
 site_url: https://a7Bz3tQ9.github.io/
 
 nav:
   - 首页: index.md
+  - 比赛分析:
+    - CSP-S 2025 分析: 比赛分析/CSP-S 2025.md
+  - 专题训练:
+       - 图论:
+          - 最短路: 专题训练/图论/最短路.md
+          - 最小生成树: 专题训练/图论/最小生成树.md
 
 theme:
   name: material
+  language: 'zh'
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: white
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
   features:
     - search
     - content.action.edit
