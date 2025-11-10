@@ -1,0 +1,777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://a7Bz3tQ9.github.io/%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>最小生成树 - a7Bz3tQ9</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Fira Sans";--md-code-font:"Fira Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="a7Bz3tQ9" class="md-header__button md-logo" aria-label="a7Bz3tQ9" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            a7Bz3tQ9
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              最小生成树
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="a7Bz3tQ9" class="md-nav__button md-logo" aria-label="a7Bz3tQ9" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    a7Bz3tQ9
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      基础算法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基础算法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prim" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prim
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kruskal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Kruskal
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boruvka" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ Boruvka
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kruskal_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ Kruskal 重构树
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="※ Kruskal 重构树">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noi2018" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ [NOI2018] 归程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ 一个例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      非树边应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非树边应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小生成树唯一性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      次小生成树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小生成基环树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小瓶颈
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小瓶颈">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小瓶颈生成树
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      最小瓶颈路
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="最小瓶颈路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#noip2013" class="md-nav__link">
+    <span class="md-ellipsis">
+      [NOIP2013] 货车运输
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#p3684-cerc2016-hangar-hurdles" class="md-nav__link">
+    <span class="md-ellipsis">
+      P3684 [CERC2016] 机棚障碍 Hangar Hurdles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ 最小直径生成树
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      建图练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="建图练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      一个例题
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      另一个例题
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      综合练习
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="综合练习">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cf1242b-0-1-mst1900" class="md-nav__link">
+    <span class="md-ellipsis">
+      CF1242B 0-1 MST（*1900）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf76a-gift2200" class="md-nav__link">
+    <span class="md-ellipsis">
+      CF76A Gift（*2200）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdu7226-darnassus" class="md-nav__link">
+    <span class="md-ellipsis">
+      HDU7226 Darnassus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cf891c-envy2300" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ CF891C Envy（*2300）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      ※ 最大曼哈顿距离生成树
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>最小生成树</h1>
+
+<h2 id="_1">基础算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="prim">Prim<a class="headerlink" href="#prim" title="Permanent link">&para;</a></h3>
+<p>类比 Dijkstra 算法，我们维护一个集合 <span class="arithmatex">\(S\)</span>，表示这个集合中的生成树已经确定了。每次加入一个与当前 MST “最近”的。</p>
+<p><span class="arithmatex">\(d_i\)</span> 表示 <span class="arithmatex">\(i\)</span> 的邻边中，另一端在 MST 中且边权最小的那条，若没有就是 <span class="arithmatex">\(\infty\)</span>。每次选一个 <span class="arithmatex">\(d_i\)</span> 最小的点，将其与这条边加入 MST，并更新其他点的 <span class="arithmatex">\(d\)</span>。初始时随便选一个点即可。</p>
+<p>时间复杂度 <span class="arithmatex">\(\mathcal O(n^2)\)</span>。同样可以用堆优化。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">void</span><span class="w"> </span><span class="nf">prim</span><span class="p">(){</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mf">1e9</span><span class="p">,</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="w"> </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&amp;&amp;</span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="o">||</span><span class="n">d</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">&lt;</span><span class="n">d</span><span class="p">[</span><span class="n">x</span><span class="p">]))</span><span class="w"> </span><span class="n">x</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">v</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">y</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">y</span><span class="o">++</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">v</span><span class="p">[</span><span class="n">y</span><span class="p">])</span><span class="w"> </span><span class="n">d</span><span class="p">[</span><span class="n">y</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">y</span><span class="p">],</span><span class="n">a</span><span class="p">[</span><span class="n">x</span><span class="p">][</span><span class="n">y</span><span class="p">]);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="kruskal">Kruskal<a class="headerlink" href="#kruskal" title="Permanent link">&para;</a></h3>
+<p>用贪心的思路，把所有的边权从小到大排序，然后一条一条尝试加入，用并查集维护连通性。</p>
+<p>可以发现这样一定能得到原图的最小生成树，证明：按边权从小到大枚举所有边，假设某个时刻可以加入 <span class="arithmatex">\((u,v)\)</span>（即 <span class="arithmatex">\(u,v\)</span> 不连通）却选择不加入，最终得到了一棵最小生成树。考虑这棵最小生成树上 <span class="arithmatex">\(u\leadsto v\)</span> 的路径，这上面一定有一条边权 <span class="arithmatex">\(\geq w_{u,v}\)</span> 的边，用 <span class="arithmatex">\((u,v)\)</span> 替换它答案一定不会变劣。</p>
+<p>时间复杂度 <span class="arithmatex">\(\mathcal O(m\log m)\)</span>。</p>
+<h3 id="boruvka">※ Boruvka<a class="headerlink" href="#boruvka" title="Permanent link">&para;</a></h3>
+<p>第三种求最小生成树的算法。</p>
+<p>我们维护当前形成的所有连通块，接下来对于每一个连通块，找到边权最小的出边，然后合并两个连通块。</p>
+<p>不断重复这个操作，直到整张图变成一个连通块。</p>
+<p>由于每次操作连通块数量至少减半，所以时间复杂度最坏为 <span class="arithmatex">\(\mathcal o((n+m)\log n)\)</span>，随机图的话复杂度能更低。</p>
+<h2 id="kruskal_1">※ Kruskal 重构树<a class="headerlink" href="#kruskal_1" title="Permanent link">&para;</a></h2>
+<p>Kruskal 重构树是基于 Kruskal 最小生成树的一种算法，它主要通过将边权转化为点权来实现。</p>
+<p>这个算法的流程如下：</p>
+<ul>
+<li>将所有边按照边权排序，设 <span class="arithmatex">\(r(x)\)</span> 表示 <span class="arithmatex">\(x\)</span> 所在连通块的根节点（用并查集维护）。</li>
+<li>枚举所有的边 <span class="arithmatex">\((u,v)\)</span>，若 <span class="arithmatex">\(u,v\)</span> 不连通，则：<ul>
+<li>新建一个点 <span class="arithmatex">\(x\)</span>，令 <span class="arithmatex">\(x\)</span> 的权值为 <span class="arithmatex">\(w_{u,v}\)</span>，连接 <span class="arithmatex">\((x,r(u))\)</span> 和 <span class="arithmatex">\((x,r(v))\)</span>，然后令 <span class="arithmatex">\(r(u)=r(v)=x\)</span>。
+不断重复以上过程，直到所有点均连通。</li>
+</ul>
+</li>
+</ul>
+<p>时间复杂度 <span class="arithmatex">\(\mathcal O(m\log m)\)</span>。</p>
+<p>这样，我们就得到了一棵 <span class="arithmatex">\(2n-1\)</span> 个节点的二叉树，其中叶节点为原图中的点，其余的点代表原图中的边，并且满足父节点权值大于等于子节点。</p>
+<p>它有什么用呢？</p>
+<ul>
+<li>求 <span class="arithmatex">\(u,v\)</span> 之间路径上的最大边权 → 求重构树上 <span class="arithmatex">\(u,v\)</span> 两个点的 LCA 的点权</li>
+<li>只保留边权 <span class="arithmatex">\(\leq x\)</span> 的边形成的树 → 重构树上点权 <span class="arithmatex">\(\leq x\)</span> 的点的子树</li>
+<li>……</li>
+</ul>
+<h3 id="noi2018">※ [NOI2018] 归程<a class="headerlink" href="#noi2018" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向连通图，每条边有长度 <span class="arithmatex">\(d\)</span> 和海拔 <span class="arithmatex">\(h\)</span>。<span class="arithmatex">\(q\)</span> 次询问，每次给出 <span class="arithmatex">\(x,p\)</span>，设从 <span class="arithmatex">\(x\)</span> 出发只经过海拔 <span class="arithmatex">\(&gt;p\)</span> 的边到达的点集为 <span class="arithmatex">\(S\)</span>，求 <span class="arithmatex">\(S\)</span> 中点到 <span class="arithmatex">\(1\)</span> 最短路长度的最小值。</p>
+<p><span class="arithmatex">\(T\leq 3\)</span>，<span class="arithmatex">\(n\leq 2\times 10^5\)</span>，<span class="arithmatex">\(m,q\leq 4\times 10^5\)</span>，<span class="arithmatex">\(l\leq 10^4\)</span>，<span class="arithmatex">\(h\leq 10^9\)</span>，强制在线。</p>
+</blockquote>
+<h3 id="_2">※ 一个例题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一棵 <span class="arithmatex">\(n\)</span> 个点的树，边有边权。定义一个点的权值为其到其他所有节点的路径上最小边权之和，求权值最大的点。</p>
+<p><span class="arithmatex">\(n\leq 10^5\)</span>。</p>
+</blockquote>
+<h2 id="_3">非树边应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">最小生成树唯一性<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>判断 MST 的唯一性。</p>
+</blockquote>
+<h3 id="_5">次小生成树<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>非严格次小生成树？严格最小生成树？</p>
+<h3 id="_6">最小生成基环树<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>最小生成基环树。</p>
+</blockquote>
+<h3 id="_7">一个例题<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>对于一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，对每一条边，都求一个最大权值 <span class="arithmatex">\(k\)</span>，使得如果把这条边的权值改为 <span class="arithmatex">\(k\)</span>（而其他边的权值不变），整个图的任意一棵 MST 上都有这条边。</p>
+<p><span class="arithmatex">\(n,m\leq 10^5\)</span>。</p>
+</blockquote>
+<h2 id="_8">最小瓶颈<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h3 id="_9">最小瓶颈生成树<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>最小生成树一定是最小瓶颈生成树（而最小瓶颈生成树不一定是最小生成树）</p>
+<p>关于最小生成树一定是瓶颈生成树这一命题，可以运用反证法证明：我们设最小生成树中的最大边权为 <span class="arithmatex">\(w\)</span>，如果最小生成树不是瓶颈生成树的话，则瓶颈生成树的所有边权都小于 <span class="arithmatex">\(w\)</span>，我们只需删去原最小生成树中的最长边，用瓶颈生成树中的一条边来连接删去边后形成的两棵树，得到的新生成树一定比原最小生成树的权值和还要小，这样就产生了矛盾。</p>
+<h3 id="_10">最小瓶颈路<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<p>无向图 <span class="arithmatex">\(u\leadsto v\)</span> 的最小瓶颈路的最大边权 → 最小生成树上 <span class="arithmatex">\(u\leadsto v\)</span> 的最大边权</p>
+<h4 id="noip2013">[NOIP2013] 货车运输<a class="headerlink" href="#noip2013" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的图，每条边有一个限重。</p>
+<p><span class="arithmatex">\(q\)</span> 次询问，每次给出 <span class="arithmatex">\(u,v\)</span>，问 <span class="arithmatex">\(u\leadsto v\)</span> 在不超过限重的情况下，重量最大可以是多少。</p>
+<p><span class="arithmatex">\(n\leq 10^4\)</span>，<span class="arithmatex">\(m\leq 5\times 10^4\)</span>，<span class="arithmatex">\(q\leq 3\times 10^4\)</span>。</p>
+</blockquote>
+<h4 id="p3684-cerc2016-hangar-hurdles">P3684 [CERC2016] 机棚障碍 Hangar Hurdles<a class="headerlink" href="#p3684-cerc2016-hangar-hurdles" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>有一个 <span class="arithmatex">\(n\times n\)</span> 的网格图，上面有些格子可行，有些格子是障碍。</p>
+<p>规定箱子是一个奇数边长的正方形，其坐标为其中心格点的坐标。</p>
+<p><span class="arithmatex">\(q\)</span> 次询问想把一个箱子从 <span class="arithmatex">\((r_1,c_1)\)</span> 推到 <span class="arithmatex">\((r_2,c_2)\)</span>，箱子最大的大小。</p>
+<p><span class="arithmatex">\(2\leq n\leq 10^3\)</span>，<span class="arithmatex">\(1\leq q\leq 3\times 10^5\)</span>，<span class="arithmatex">\(1\leq r_1,c_1,r_2,c_2\leq n\)</span>。</p>
+</blockquote>
+<h2 id="_11">※ 最小直径生成树<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<p>BZOJ2180 最小直径生成树</p>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，边有边权，求一棵生成树 <span class="arithmatex">\(T\)</span>，使得 <span class="arithmatex">\(T\)</span> 的直径最小。输出这个直径。</p>
+<p><span class="arithmatex">\(1\leq m\leq 10^3\)</span>，<span class="arithmatex">\(0\leq w_i\leq 10^3\)</span>。</p>
+</blockquote>
+<h2 id="_12">建图练习<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
+<h3 id="_13">一个例题<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，点有点权 <span class="arithmatex">\(a_i\)</span>，边有边权。</p>
+<p>你可以选择一个非空点集 <span class="arithmatex">\(S\)</span>，最小化 <span class="arithmatex">\(\sum_{i\in S}a_i+\sum_{j\notin S}(\min_{i\in S}dis(i,j))\)</span>。</p>
+<p><span class="arithmatex">\(n,m\leq 10^5\)</span>，<span class="arithmatex">\(a_i\leq 10^9\)</span>。</p>
+</blockquote>
+<h3 id="_14">另一个例题<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，点有点权 <span class="arithmatex">\(a_i\)</span>。对于生成树 <span class="arithmatex">\(T\)</span>，设 <span class="arithmatex">\(deg_x\)</span> 表示 <span class="arithmatex">\(x\)</span> 在 <span class="arithmatex">\(T\)</span> 中的度数，定义 <span class="arithmatex">\(T\)</span> 的权值为 <span class="arithmatex">\(\sum_x a_x\cdot deg_x\)</span>。求 MST。</p>
+</blockquote>
+<h2 id="_15">综合练习<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h2>
+<h3 id="cf1242b-0-1-mst1900">CF1242B 0-1 MST（*1900）<a class="headerlink" href="#cf1242b-0-1-mst1900" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>一个 <span class="arithmatex">\(n\)</span> 个点的无向完全图，边权为 <span class="arithmatex">\(0\)</span> 或 <span class="arithmatex">\(1\)</span>。边权为 <span class="arithmatex">\(1\)</span> 的边有 <span class="arithmatex">\(m\)</span> 条。求 MST。</p>
+<p><span class="arithmatex">\(1\leq n\leq 10^5\)</span>，<span class="arithmatex">\(0\leq m\leq \min(\frac{n(n-1)}{2},10^5)\)</span>。</p>
+</blockquote>
+<h3 id="cf76a-gift2200">CF76A Gift（*2200）<a class="headerlink" href="#cf76a-gift2200" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向图，每条边有属性 <span class="arithmatex">\((g_i,s_i)\)</span>。给定 <span class="arithmatex">\(G,S\)</span>，求一棵图的生成树 <span class="arithmatex">\(T\)</span> 最小化 <span class="arithmatex">\(G\times \max\limits_{i\in T}(g_i)+S\times \max\limits_{i\in T}(s_i)\)</span>。</p>
+<p><span class="arithmatex">\(2\leq n\leq 200\)</span>，<span class="arithmatex">\(1\leq m\leq 5\times 10^4\)</span>，<span class="arithmatex">\(1\leq G,S,g_i,s_i\leq 10^9\)</span>，2s。</p>
+</blockquote>
+<h3 id="hdu7226-darnassus">HDU7226 Darnassus<a class="headerlink" href="#hdu7226-darnassus" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一个排列 <span class="arithmatex">\(p_{1\sim n}\)</span>，建一张 <span class="arithmatex">\(n\)</span> 个点的完全图，<span class="arithmatex">\((i,j)\)</span> 的边权为 <span class="arithmatex">\(|i-j|\times|p_i-p_j|\)</span>，求这张图的 MST。</p>
+<p><span class="arithmatex">\(1\leq T\leq 5\)</span>，<span class="arithmatex">\(1\leq n\leq 5\times 10^4\)</span>。</p>
+</blockquote>
+<h3 id="cf891c-envy2300">※ CF891C Envy（*2300）<a class="headerlink" href="#cf891c-envy2300" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出一张 <span class="arithmatex">\(n\)</span> 个点 <span class="arithmatex">\(m\)</span> 条边的无向连通图。每次询问给一个边集，问这些边能否出现在同一棵 MST 中。</p>
+<p><span class="arithmatex">\(n,m,\sum |S|\leq 5\times 10^5\)</span>。</p>
+</blockquote>
+<h3 id="_16">※ 最大曼哈顿距离生成树<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>给出平面上 <span class="arithmatex">\(n\)</span> 个点，两个点之间的距离定义为曼哈顿距离，求这 <span class="arithmatex">\(n\)</span> 个点的最大生成树。</p>
+<p><span class="arithmatex">\(n\leq 2\times 10^6\)</span>。</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["search", "content.action.edit", "navigation.tabs", "navigation.instant", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
