@@ -859,18 +859,6 @@ signed main(){
 </li>
 <li>
 <p>先 <span class="arithmatex">\(\mathcal O(m\log m)\)</span> 对原图跑一遍 MST，不属于原图 MST 的边必然也不属于新图 MST。这样原图的 <span class="arithmatex">\(m\)</span> 条边只需保留 <span class="arithmatex">\(n-1\)</span> 条。</p>
-<details class="tip" open="open">
-<summary>Tip</summary>
-<p>一张图 <span class="arithmatex">\(G\)</span>，增加若干条边得到 <span class="arithmatex">\(G'\)</span>。则若存在一棵 <span class="arithmatex">\(G\)</span>-MST 不含边 <span class="arithmatex">\(e\)</span>，那么也存在一棵 <span class="arithmatex">\(G'\)</span>-MST 不含 <span class="arithmatex">\(e\)</span>。</p>
-<ul>
-<li>证明：</li>
-</ul>
-<p>假设 <span class="arithmatex">\(e\)</span> 属于 <span class="arithmatex">\(G'\)</span> 的某棵 MST <span class="arithmatex">\(T\)</span>。那么把 <span class="arithmatex">\(e\)</span> 从 <span class="arithmatex">\(T\)</span> 中删除，会得到两个连通块。</p>
-<div class="highlight"><pre><span></span><code>由于 $e$ 不属于 $G$ 的某棵 MST，则 $G$ 中存在边权小于等于 $e$ 的边 $e&#39;$ 连接这两个连通块。
-
-那么将 $T$ 的 $e$ 替换成 $e&#39;$ 不劣。
-</code></pre></div>
-</details>
 <p>然后 <span class="arithmatex">\(\mathcal O(2^k)\)</span> 枚举改造的乡镇，每次 <span class="arithmatex">\(\mathcal O(nk\log nk)\)</span> 对新图暴力 MST。</p>
 <details class="note">
 <summary>80 分</summary>
