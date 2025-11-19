@@ -15,7 +15,6 @@ nav:
     - DP:
       - 状压 DP: 专题训练/DP/状压 DP.md
       - 树形 DP: 专题训练/DP/树形 DP.md
-		
 theme:
   name: material
   language: 'zh'
