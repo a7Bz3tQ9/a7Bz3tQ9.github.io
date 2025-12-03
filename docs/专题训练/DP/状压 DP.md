@@ -291,3 +291,192 @@ signed main(){
 转移枚举要操作 $a\neq b$，若 $a\oplus b\notin S$ 就 $f_S\gets f_{S-\{a,b\}+\{a\oplus b\}}+1$，否则 $f_S\gets f_{S-\{a,b\}}+2$ 表示新增一次操作消掉 $a\oplus b$。
 
 注意转移顺序是按 $|S|$ 从小到大。
+
+##### P5369 [PKUSC2018]最大前缀和
+
+> 给出一个长度为 $n$ 的序列 $a$，求全排列下最大前缀和之和 $\bmod 998244353$。
+>
+> $1\leq n\leq 20$，$\sum_{i=1}^n|a_i|\leq 10^9$。
+
+一个序列的最大前缀和不唯一，我们姑且规定，若有多个最大前缀和，取最靠前的。
+
+无脑从前往后很难维护。考虑钦点最靠前的最大前缀和的位置 $x$。
+
+那么从 $x$ 往前，后缀和都 $>0$（若把前缀和化成折线，若存在后缀和 $\leq 0$ 就说明 $x$ 前面有个比它高的点，走下坡路才走到 $x$）；从 $x$ 往后，前缀和都 $\leq 0$。
+
+处理出 $f_S,g_S$ 分别表示把集合 $S$ 里的数排成一排，后缀和都 $>0$、前缀和都 $\leq 0$ 的方案数。
+
+转移时，以 $g_S$ 为例，枚举一个 $i\not\in S$，把 $i$ 放到 $S$ 排成的序列后面。$i$ 不会影响之前的前缀和，只要保证新添的 $sum_{S\cup\{i\}}\leq 0$ 即可，$g_{S\cup \{i\}}\gets g_{S\cup\{i\}}+g_S$。
+
+枚举 $S$ 为前缀 $x$，$ans=\sum_S sum_S f_Sg_{U-S}$。
+
+##### P2150 [NOI2015] 寿司晚宴
+
+> 有 $2\sim n$ 这 $n-1$ 个数，你可以选出其中任意个数分成两个集合，使得第一个集合中的每一个数与第二个集合中每一个数两两互质的方案数 $\bmod p$。
+>
+> $2\leq n\leq 500$，$0<p\leq 10^9$。
+
+两边出现的质因子集合不能相交。
+
+状压出现的质因子？$500$ 以内的质数有 $95$ 个。不过对于任意一个数，$>\sqrt n$（约为 $22$）的质因子只有 $1$ 个，我们能压它们 $<22$ 的质因子状态（只有 $8$ 个）。设 $f_{S_1,S_2}$ 表示 A 选的质因子有 $S_1$，B 选的质因子有 $S_2$ 的方案数。
+
+对于 $>22$ 的质因子相同的数可以将其打包成一组考虑，这组数只能被至多一个人选。分别 DP 即可（分组背包）。
+
+
+
+
+
+每个质因子只能出现在至多一个集合。
+
+暴力 DP：设 $f_{i,j}$ 表示第一、二个集合质因子集合分别为 $i,j$ 的方案数。$1\sim 500$ 质数个数太多复杂度爆炸。
+
+一个经典套路：每个数的质因子中最多只有一个 $>\sqrt n$。而 $<\sqrt n$（约等于 $22$）的质数只有 $8$ 个。
+
+用同样的方法设立状态，$i,j\in[0,2^8)$。然后枚举一段 $>\sqrt n$ 的质因子相同的数，它们只可能放入一个集合中。设 $g1_{i,j},g2_{i,j}$ 分别表示将它们放入第一、二个集合得到的 DP 数组，$f_{i,j}\gets g1_{i,j}+g2_{i,j}-f_{i,j}$，$-f_{i,j}$ 是因为 $g1,g2$ 会各自算一次空集的情况。
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+const int N=(1<<8)+5;
+int n,p[8]={2,3,5,7,11,13,17,19};
+long long mod,f[N][N],g[2][N][N],ans;
+pair<int,int>a[510];
+signed main(){
+	scanf("%d%lld",&n,&mod);
+	for(int i=2;i<=n;i++){
+		int x=i;
+		for(int j=0;j<8;j++) if(x%p[j]==0){	//状压小质数
+			a[i].second|=(1<<j);
+			while(x%p[j]==0) x/=p[j];
+		}
+		a[i].first=x;	//大质数
+	}
+	sort(a+2,a+1+n),f[0][0]=1;
+	for(int i=2;i<=n;i++){
+		if(a[i].first!=a[i-1].first||a[i].first==1)
+			memcpy(g[0],f,sizeof(f)),memcpy(g[1],f,sizeof(f));
+		for(int j=(1<<8)-1;j>=0;j--)
+			for(int k=(1<<8)-1;k>=0;k--)
+				(g[0][j|a[i].second][k]+=g[0][j][k])%=mod,(g[1][j][k|a[i].second]+=g[1][j][k])%=mod;
+		if(a[i].first!=a[i+1].first||a[i+1].first==1)
+			for(int j=(1<<8)-1;j>=0;j--)
+				for(int k=(1<<8)-1;k>=0;k--)
+					f[j][k]=(g[0][j][k]+g[1][j][k]-f[j][k]+mod)%mod;
+	}
+	for(int i=0;i<(1<<8);i++)
+		for(int j=0;j<(1<<8);j++) if(!(i&j)) (ans+=f[i][j])%=mod;
+	prinstf("%lld\n",ans);
+	return 0;
+}
+```
+
+##### CF1174E Ehab and the Expected GCD Problem（\*2500）
+
+2020.9.2
+
+> 对于一个排列，定义它的权值为前缀 $\gcd$ 中不同的数字个数。
+>
+> 求有多少个权值最大的 $1\sim n$ 的排列 $\bmod 10^9+7$。
+>
+> $2\leq n\leq 10^6$。
+
+若排列的第一个数 $X=\prod p_i^{c_i}$，显然答案不会超过 $\sum c_i$。事实上，若我们找到了 $\sum c_i$ 之和最大的数作为第一个数，那么总能构造出排列达到上界。
+
+如何确定 $1\sim n$ 中 $\sum c_i$ 最大的数？它们有什么特点？
+
+- 性质：$\sum c_i$ 最大的数只可能有质因子 $2,3$，且 $3$ 的指数 $\leq 1$。
+
+  证明：$\geq 5$ 的质因子可以用 $2^2$ 替换得到更优解。$3^2$ 可以用 $2^3$ 替换得到更优解。
+
+设 $f_{i,x,y}$ 表示考虑到排列的第 $i$ 位，目前的前缀 $\gcd$ 为 $N(x,y)=2^x\cdot 3^y$ 的方案数。转移：
+
+1. $\gcd$ 不变：$N(x,y)\mid p_i$，$f_{i-1,x,y}\times(\lfloor\frac{n}{N(x,y)}\rfloor-(i-1))\to f_{x,y}$（$-(i-1)$ 是因为 $N(x,y)\mid p_{1\sim i-1}$）
+2. $\gcd$ 中的 $2$ 减少 $1$：$N(x,y)\not\mid p_i$，$N(x-1,y)\mid p_i$，$f_{i-1,x,y}\times(\lfloor\frac{n}{N(x-1,y)}\rfloor-\lfloor\frac{n}{N(x,y)}\rfloor)\to f_{i,x-1,y}$
+3. $\gcd$ 中的 $3$ 减少 $1$：同理，$f_{i-1,x,y}\times(\lfloor\frac{n}{N(x,y-1)}\rfloor-\lfloor\frac{n}{N(x,y)}\rfloor)\to f_{i,x,y-1}$
+
+$ans=f_{n,0,0}$。
+
+##### CF1342F Make It Ascending（\*3000）
+
+2022.2.7
+
+> 给出 $a_{1\sim n}$，每次可以选一对 $(i,j)$，把 $a_j$ 删了并使 $a_i\gets a_i+a_j$。求最少操作多少次，使得 $a$ 严格递增。
+>
+> $1\leq n\leq 15$，$1\leq a_i\leq 10^6$。
+
+最后严格递增的 $a$ 里，每个元素都对应着原始 $a$ 的一个子集，考虑对这个子集 DP。
+
+设 $f_{i,S}$ 表示划分了 $i$ 个集合，已经使用的元素集合为 $S$，第 $i$ 个集合的和的最小值。转移要满足“和严格递增”的限制。但可能出现位置的不合法，比如 $\{a_3,a_4\},\{a_1,a_2\}$。
+
+解决方案：$f_{i,p,S}$，$p$ 表示第 $i$ 个集合的代表元（所有元素都合并到它）。新划分第 $i+1$ 个集合时，肯定是选取的代表元越前面越好，所以取第 $i+1$ 个集合里 $p$ 后面的第一个点即可。
+
+时间复杂度 $\mathcal O(3^nn^2)$。
+
+##### Gym102460G Optimal Selection
+
+2023.2.3
+
+> 有两两不同的 $n$ 个正整数 $a_{1\sim n}$，给出其中 $l$ 对元素的大小关系，问在不排序的情况下找到这个数组第 $k$ 小的数且比较元素大小次数最少的算法最坏情况下要比较多少次。
+>
+> $1\leq n\leq 8$，$1\leq k\leq n$，$0\leq l\leq n$。
+
+考虑一张表示元素之间大小关系的有向图（比如 $i\to j$ 表示 $a_i<a_j$），每次新比较一次，相当于新加入一条未出现的有向边，然后跑一次传递闭包。
+
+设 $f_S$ 表示当前传递闭包后有向图为 $S$，之后最少还需要比较多少次。
+
+判定已经找到第 $k$ 小：由于已传递闭包，只需看 $S$ 中是否存在一个点满足入度为 $k-1$ 且出度为 $n-k$。
+
+优化：同构的有向图可以合并状态。使用直接状压图/图哈希进行判定。由于点数很小，一些同构判定成不同构也没事。代码中写的是，以 (入度，出度，点的编号) 排序，状压连边状态。
+
+```cpp
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+const int N=10;
+int n,k,l,x,y,e[N][N],f[N][N],ok,in[N],out[N],id[N];
+unordered_map<ll,int>mp;
+struct P{
+	int f[N][N];
+	ll hsh(){
+		for(int i=1;i<=n;i++)
+			for(int j=1;j<=n;j++) f[i][j]=e[i][j];
+		for(int k=1;k<=n;k++)
+			for(int i=1;i<=n;i++)
+				for(int j=1;j<=n;j++) f[i][j]|=f[i][k]&f[k][j];
+		ok=0;
+		for(int i=1;i<=n;i++){
+			in[i]=out[i]=0,id[i]=i;
+			for(int j=1;j<=n;j++)
+				in[i]+=f[j][i],out[i]+=f[i][j];
+			if(in[i]==k-1&&out[i]==n-k) return ok=1;
+		}
+		sort(id+1,id+1+n,[](int x,int y){return in[x]^in[y]?in[x]<in[y]:(out[x]^out[y]?out[x]<out[y]:x<y);});
+		ll ans=0;
+		for(int i=1;i<=n;i++)
+			for(int j=1;j<=n;j++) ans=ans*2+f[id[i]][id[j]];
+		return ans;
+	}
+}g[110];
+int dfs(int d){
+	ll h=g[d].hsh();
+	if(ok) return 0;
+	if(mp.count(h)) return mp[h];
+	int x,y,ans=1e9;
+	for(int i=1;i<=n;i++)
+		for(int j=i+1;j<=n;j++)
+			if(!g[d].f[i][j]&&!g[d].f[j][i]){
+				e[i][j]=1,x=dfs(d+1),e[i][j]=0;
+				e[j][i]=1,y=dfs(d+1),e[j][i]=0;
+				ans=min(ans,max(x,y)+1);
+			}
+	return mp[h]=ans;
+}
+signed main(){
+	scanf("%d%d%d",&n,&k,&l);
+	for(int i=1;i<=l;i++)
+		scanf("%d%d",&x,&y),e[++x][++y]=1;
+	printf("%d\n",dfs(1));
+	return 0;
+} 
+```
+
