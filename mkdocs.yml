@@ -16,7 +16,10 @@ nav:
       - 状压 DP: 专题训练/DP/状压 DP.md
       - 树形 DP: 专题训练/DP/树形 DP.md
       - 树形 DP 2: 专题训练/DP/树形 DP 2.md
+      - 数位 DP: 专题训练/DP/数位 DP.md
       - DP 优化: 专题训练/DP/DP 优化.md
+      - 斜率优化: 专题训练/DP/斜率优化.md
+      - wqs 二分: 专题训练/DP/wqs 二分.md 
 
 theme:
   name: material
