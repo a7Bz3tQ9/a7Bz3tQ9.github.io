@@ -8,29 +8,31 @@
       
       
       
-        <link rel="canonical" href="https://a7Bz3tQ9.github.io/">
+        <link rel="canonical" href="https://a7Bz3tQ9.github.io/%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
       
       
+        <link rel="prev" href="../%E5%8D%95%E8%B0%83%E6%A0%88/">
       
-        <link rel="next" href="%E6%AF%94%E8%B5%9B%E5%88%86%E6%9E%90/CSP-S%202025/">
+      
+        <link rel="next" href="../%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%9F%BA%E7%A1%80/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>notes</title>
+        <title>并查集 - notes</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -51,9 +53,9 @@
     
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -87,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="notes" class="md-header__button md-logo" aria-label="notes" data-md-component="logo">
+    <a href="../../.." title="notes" class="md-header__button md-logo" aria-label="notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -107,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              首页
+              并查集
             
           </span>
         </div>
@@ -211,11 +218,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
   
@@ -236,7 +241,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="%E6%AF%94%E8%B5%9B%E5%88%86%E6%9E%90/CSP-S%202025/" class="md-tabs__link">
+        <a href="../../../%E6%AF%94%E8%B5%9B%E5%88%86%E6%9E%90/CSP-S%202025/" class="md-tabs__link">
           
   
   
@@ -252,6 +257,8 @@
   
   
   
+    
+  
   
     
     
@@ -259,11 +266,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E8%AE%BA/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E8%AE%BA/" class="md-tabs__link">
           
   
   
@@ -300,7 +309,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="notes" class="md-nav__button md-logo" aria-label="notes" data-md-component="logo">
+    <a href="../../.." title="notes" class="md-nav__button md-logo" aria-label="notes" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -315,17 +324,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -341,7 +343,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -403,7 +404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E6%AF%94%E8%B5%9B%E5%88%86%E6%9E%90/CSP-S%202025/" class="md-nav__link">
+      <a href="../../../%E6%AF%94%E8%B5%9B%E5%88%86%E6%9E%90/CSP-S%202025/" class="md-nav__link">
         
   
   
@@ -435,24 +436,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -470,7 +476,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -538,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E8%AE%BA/" class="md-nav__link">
+      <a href="../../%E5%9B%BE%E8%AE%BA/%E5%9B%BE%E8%AE%BA/" class="md-nav__link">
         
   
   
@@ -566,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="md-nav__link">
+      <a href="../../%E5%9B%BE%E8%AE%BA/%E6%9C%80%E7%9F%AD%E8%B7%AF/" class="md-nav__link">
         
   
   
@@ -594,7 +600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
+      <a href="../../%E5%9B%BE%E8%AE%BA/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="md-nav__link">
         
   
   
@@ -622,7 +628,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
+      <a href="../../%E5%9B%BE%E8%AE%BA/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="md-nav__link">
         
   
   
@@ -650,7 +656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E5%9B%BE%E8%AE%BA/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" class="md-nav__link">
+      <a href="../../%E5%9B%BE%E8%AE%BA/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/" class="md-nav__link">
         
   
   
@@ -736,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/%E7%8A%B6%E5%8E%8B%20DP/" class="md-nav__link">
+      <a href="../../DP/%E7%8A%B6%E5%8E%8B%20DP/" class="md-nav__link">
         
   
   
@@ -764,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/%E6%A0%91%E5%BD%A2%20DP/" class="md-nav__link">
+      <a href="../../DP/%E6%A0%91%E5%BD%A2%20DP/" class="md-nav__link">
         
   
   
@@ -792,7 +798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/%E6%A0%91%E5%BD%A2%20DP%202/" class="md-nav__link">
+      <a href="../../DP/%E6%A0%91%E5%BD%A2%20DP%202/" class="md-nav__link">
         
   
   
@@ -820,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/%E6%95%B0%E4%BD%8D%20DP/" class="md-nav__link">
+      <a href="../../DP/%E6%95%B0%E4%BD%8D%20DP/" class="md-nav__link">
         
   
   
@@ -848,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/DP%20%E4%BC%98%E5%8C%96/" class="md-nav__link">
+      <a href="../../DP/DP%20%E4%BC%98%E5%8C%96/" class="md-nav__link">
         
   
   
@@ -876,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/" class="md-nav__link">
+      <a href="../../DP/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/" class="md-nav__link">
         
   
   
@@ -904,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/DP/wqs%20%E4%BA%8C%E5%88%86/" class="md-nav__link">
+      <a href="../../DP/wqs%20%E4%BA%8C%E5%88%86/" class="md-nav__link">
         
   
   
@@ -937,6 +943,8 @@
                 
   
   
+    
+  
   
   
     
@@ -947,11 +955,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -972,7 +980,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -990,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%8D%95%E8%B0%83%E6%A0%88/" class="md-nav__link">
+      <a href="../%E5%8D%95%E8%B0%83%E6%A0%88/" class="md-nav__link">
         
   
   
@@ -1015,10 +1023,35 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    并查集
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1034,6 +1067,129 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        并查集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="并查集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C8
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1046,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+      <a href="../%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%9F%BA%E7%A1%80/" class="md-nav__link">
         
   
   
@@ -1074,7 +1230,7 @@
   
   
     <li class="md-nav__item">
-      <a href="%E4%B8%93%E9%A2%98%E8%AE%AD%E7%BB%83/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="md-nav__link">
+      <a href="../%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="md-nav__link">
         
   
   
@@ -1128,6 +1284,119 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        并查集
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="并查集">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C4
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C8
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1143,32 +1412,71 @@
 
 
 
-  <h1>首页</h1>
+  <h1>并查集</h1>
 
-<details class="info">
-<summary>原话</summary>
-<p>最短路把主要的算法学了，但遇到变换不能接受</p>
-<p>字符串就学了个哈希，KMP会模板</p>
-<p>动态规划学了个背包和区间，树上dp不太行，状压就会基本的，其他全不会</p>
-<p>搜索会DFS,BFS,双向BFS,A*不会，启发式搜索不会</p>
-<p>构造还行，能对上脑电波就会</p>
-<p>倍增会部分</p>
-<p>前缀和 &amp; 差分 就不会高维前缀和 &amp; 差分</p>
-<p>数学会莫反模板，其他都不大会</p>
-<p>数据结构会线段树，树状数组基础板子，ST表，单调队列，Splay会板子</p>
-<p>图论部分会一点二分图，一点拓扑</p>
-<p>最小生成树主要的算法学了，但遇到变换也不能接受</p>
-<p>几何几乎完全不会</p>
-<p>会一点离线的思想，会离散化</p>
-<p>其实学过的遇到大变样子的都认不出来，想听ST2，其他的随意</p>
-</details>
-<p>图论：最短路、MST 的一些变形（DFS 树？欧拉回路？Tarjan？二分图匹配？杂题？）</p>
-<p>DP：树形 DP，状压 DP（数位 DP？）</p>
-<p>数据结构</p>
-<p>字符串</p>
-<p>组合计数（容斥？二项式反演？）</p>
-<p>※ 简单数论，※ 简单线代</p>
-<p>其他（分治，乱搞技巧）</p>
+<h3 id="_1">并查集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>并查集直接路径压缩是均摊 <span class="arithmatex">\(\mathcal O(n\log n)\)</span>，所以可撤销并查集需要按秩合并保证树高。</p>
+<h4 id="c1">C1<a class="headerlink" href="#c1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>加边。求 <span class="arithmatex">\(\sum_{i=1}^n\sum_{j=i+1}^n L(i,j)\)</span>，其中 <span class="arithmatex">\(L(i,j)\)</span> 表示 <span class="arithmatex">\(i,j\)</span> 最早什么时候连通。</p>
+</blockquote>
+<p>第 <span class="arithmatex">\(i\)</span> 个时刻合并集合 <span class="arithmatex">\(x\)</span> 和集合 <span class="arithmatex">\(y\)</span> 时，贡献 <span class="arithmatex">\(i\cdot sz_x\cdot sz_y\)</span>。</p>
+<h4 id="c2">C2<a class="headerlink" href="#c2" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>加边。求两个点是在什么时候连通的。在线。</p>
+</blockquote>
+<p>只按秩合并不路径压缩。如图，直接合并根为 <span class="arithmatex">\(A,B\)</span> 的集合，<span class="arithmatex">\(A=\text{lca}(x,y)\)</span>，<span class="arithmatex">\(B\)</span> 为 <span class="arithmatex">\(x\to A\)</span> 链上 <span class="arithmatex">\(A\)</span> 的儿子。</p>
+<p><img src="https://img2022.cnblogs.com/blog/1859218/202208/1859218-20220829144951980-161400863.png" alt="image" style="zoom:50%;" /></p>
+<p>间接合并：设 <span class="arithmatex">\(B,C\)</span> 分别为 <span class="arithmatex">\(x\to A,y\to A\)</span> 链上 <span class="arithmatex">\(A\)</span> 的儿子，则 <span class="arithmatex">\(x,y\)</span> 连通的时刻为 <span class="arithmatex">\(\max(w(B,A),w(C,A))\)</span>。</p>
+<p><img src="https://img2022.cnblogs.com/blog/1859218/202208/1859218-20220829145123991-1523824026.png" alt="image" style="zoom:50%;" /></p>
+<p>维护 <span class="arithmatex">\(dep\)</span>。</p>
+<p>（离线就是“并查集生成树”查询路径边权最大值）</p>
+<h4 id="c3">C3<a class="headerlink" href="#c3" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>加边。询问第 <span class="arithmatex">\(x\)</span> 个点在第 <span class="arithmatex">\(i\)</span> 条边加入后所在连通块的大小。离线。</p>
+</blockquote>
+<p>Kruskal 重构树，以边的编号作为边权，算 <span class="arithmatex">\(x\)</span> 只经过 <span class="arithmatex">\(\leq i\)</span> 的边能到多少个点。</p>
+<h4 id="c4">C4<a class="headerlink" href="#c4" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出一个数组 <span class="arithmatex">\(a_{1\sim n}\)</span>，初始全为 <span class="arithmatex">\(0\)</span>，两种操作：</p>
+<ol>
+<li>令 <span class="arithmatex">\(a_x\gets 1\)</span>。</li>
+<li>询问 <span class="arithmatex">\(a_{x\sim n}\)</span> 中第一个为 <span class="arithmatex">\(0\)</span> 的位置。</li>
+</ol>
+</blockquote>
+<p>维护 <span class="arithmatex">\(f_i\)</span> 表示从 <span class="arithmatex">\(i\)</span> 开始向右延伸 <span class="arithmatex">\(1\)</span> 最多能延伸到哪里。并查集路径压缩维护。</p>
+<ol>
+<li><code>fa[x-1]=x</code>。</li>
+<li>输出 <code>find(x)+1</code>。</li>
+</ol>
+<h4 id="c5">C5<a class="headerlink" href="#c5" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出一个初始全为 <span class="arithmatex">\(0\)</span> 的数组 <span class="arithmatex">\(a_{1\sim n}\)</span>，每次操作把 <span class="arithmatex">\(a_{l\sim r}\)</span> 中所有还是 <span class="arithmatex">\(0\)</span> 的数​变成 <span class="arithmatex">\(k\)</span>。求最后数组变成了什么。</p>
+</blockquote>
+<p>维护 <span class="arithmatex">\(f_i\)</span> 表示 <span class="arithmatex">\(i\)</span> 及其右边第一个为 <span class="arithmatex">\(0\)</span> 的位置。并查集路径压缩维护。暴力赋值。</p>
+<h4 id="c6">C6<a class="headerlink" href="#c6" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出一个数组 <span class="arithmatex">\(a_{1\sim n}\)</span>，每次操作可以对一个区间的数开根下取整。询问区间和。</p>
+</blockquote>
+<p>一个数只会开根 <span class="arithmatex">\(\mathcal O(\log\log V)\)</span> 次，变成 <span class="arithmatex">\(1\)</span> 就不用管了。</p>
+<p>维护 <span class="arithmatex">\(f_i\)</span> 表示 <span class="arithmatex">\(i\)</span> 及其右边第一个 <span class="arithmatex">\(\neq 1\)</span> 的位置，暴力开根。树状数组维护单点加，区间求和。</p>
+<h4 id="c7">C7<a class="headerlink" href="#c7" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出 <span class="arithmatex">\(a_{1\sim n},b_{1\sim n},c_{1\sim n}\)</span>，求 <span class="arithmatex">\(a_i\times b_j\times \min(c_{i\sim j})\)</span> 的最大值。</p>
+</blockquote>
+<p>单调栈：枚举 <span class="arithmatex">\(\min(c_{i\sim j})=c_x\)</span>，求出区间最小值为 <span class="arithmatex">\(c_x\)</span> 的区间范围 <span class="arithmatex">\(L,R\)</span>，在 <span class="arithmatex">\([L,x]\)</span> 里找到最大/最小的 <span class="arithmatex">\(a_i\)</span>，<span class="arithmatex">\([x,R]\)</span> 里找到最大/最小的 <span class="arithmatex">\(b_j\)</span>。找最小是因为可能有负数。</p>
+<p>并查集：关于 <span class="arithmatex">\(c\)</span> 从大到小进行合并，那么合并两个内部合并好的区间 <span class="arithmatex">\([l_1,r_1],[r_1+1,r_2]\)</span> 时，<span class="arithmatex">\(\min(c_{l_1\sim r_2})\)</span> 就是 <span class="arithmatex">\(\min(c_{r_1},c_{r_1+1})\)</span>，并查集维护集合内部 <span class="arithmatex">\(a,b\)</span> 的最大/最小值。</p>
+<p>具体地，将边 <span class="arithmatex">\((i,i+1)\)</span> 按 <span class="arithmatex">\(\min(c_i,c_{i+1})\)</span> 从大到小合并（把点权转成边权，好处是，<strong>这样 <span class="arithmatex">\(\min(c_{l\sim r})\)</span> 就是 <span class="arithmatex">\(l\sim r\)</span> 这条链所有边的 <span class="arithmatex">\(\min\)</span></strong>。如果按点权从大到小排序，枚举到一个点时要考虑它相邻的每个点，而枚举边只要考虑这条边两端的两个点）。枚举到一条边 <span class="arithmatex">\((i,i+1)\)</span> 时，就把这条边的两端合并：设这条边的两端分别在合并好的两个集合 <span class="arithmatex">\(x,y\)</span> 里，从 <span class="arithmatex">\(x,y\)</span> 里分别选一个点，区间最小值都是 <span class="arithmatex">\(\min(c_i,c_{i+1})\)</span>。</p>
+<p>这种做法是很容易扩展到树上的（区间最小值改成路径最小值），因为实际上我们没有用到区间的性质。点权转边权，这样路径最小值就是这条链所有边的 <span class="arithmatex">\(\min\)</span>。类似的题目有 CF915F。</p>
+<p>另一个想法是分治，找到 <span class="arithmatex">\(\min(c_{i\sim j})\)</span> 然后分裂两半，即从小到大分裂。这和从大到小合并是相对的，一种行不通时不妨想想另一种。如 P8552。</p>
+<h4 id="c8">C8<a class="headerlink" href="#c8" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>给出一棵树，两种操作：</p>
+<ol>
+<li>加边。</li>
+<li>询问两个点是否存在至少两条不相交路径。</li>
+</ol>
+</blockquote>
 
 
 
@@ -1224,16 +1532,16 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["search", "content.action.edit", "navigation.tabs", "navigation.instant", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["search", "content.action.edit", "navigation.tabs", "navigation.instant", "navigation.top", "content.code.copy", "search.suggest", "search.highlight", "search.share", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
       
-        <script src="javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
     
   </body>
