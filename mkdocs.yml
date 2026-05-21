@@ -2,6 +2,7 @@ site_name: notes
 site_url: https://a7Bz3tQ9.github.io/
 
 nav:
+  - 多元函数微分学: 多元函数微分学.md
   # - 首页: index.md
   # - 比赛分析:
   #   - CSP-S 2025 分析: 比赛分析/CSP-S 2025.md
