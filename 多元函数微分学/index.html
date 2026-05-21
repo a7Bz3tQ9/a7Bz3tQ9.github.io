@@ -730,7 +730,7 @@
 <p>不妨限定 <span class="arithmatex">\(1&lt;x&lt;3\)</span>，<span class="arithmatex">\(0&lt;y&lt;2\)</span>，取 <span class="arithmatex">\(\delta=\min\{1,\dfrac\varepsilon{13}\}\)</span> 即可。</p>
 </details>
 <p>不妨设 <span class="arithmatex">\(1&lt;x&lt;3,0&lt;y&lt;2\)</span>，则对 <span class="arithmatex">\(\forall \varepsilon&gt;0\)</span>，<span class="arithmatex">\(\exists\delta=\min\{1,\dfrac\varepsilon{13}\}\)</span>，当 <span class="arithmatex">\(|x-2|&lt;\delta,|y-1|&lt;\delta\)</span> 且 <span class="arithmatex">\((x,y)\neq (2,1)\)</span> 时，有 <span class="arithmatex">\(|(x^2+2y^2+2x-1)-9|=|(x+4)(x-2)+2(y+1)(y-1)|\leq 7|x-2|+6|y-1|&lt;\varepsilon\)</span>。</p>
-<details open="open">
+<details class="tip" open="open">
 <summary>根据定义证明极限</summary>
 <p>如果选择方邻域，要根据 <span class="arithmatex">\(|f(x)-A|&lt;\varepsilon\)</span>，推出 <span class="arithmatex">\(0&lt;|x-x_0|&lt;\delta\)</span> 以及 <span class="arithmatex">\(0&lt;|y-y_0|&lt;\delta\)</span> 的 <span class="arithmatex">\(\delta\)</span>。所以要把 <span class="arithmatex">\(|f(x)-A|\)</span> 化出 <span class="arithmatex">\(|x-x_0|\)</span> 和 <span class="arithmatex">\(|y-y_0|\)</span> 的形式。可以将讨论范围限定在点 <span class="arithmatex">\((x_0,y_0)\)</span> 的某方邻域内进行放缩。</p>
 <p>如果选择圆邻域，需要根据 <span class="arithmatex">\(|f(x)-A|&lt;\varepsilon\)</span>，推出 <span class="arithmatex">\(0&lt;\sqrt{(x-x_0)^2+(y-y_0)^2}&lt;\delta\)</span> 的 <span class="arithmatex">\(\delta\)</span>。所以要把 <span class="arithmatex">\(|f(x)-A|\)</span> 放缩出 <span class="arithmatex">\(|x-x_0|^2+|y-y_0|^2\)</span> 的形式。</p>
@@ -2035,7 +2035,7 @@
 </details>
 </li>
 <li>
-<p>二元函数拉格朗日中值公式：设函数 <span class="arithmatex">\(f(x,y)\)</span> 在凸开域 <span class="arithmatex">\(D\)</span> 上连续，在 <span class="arithmatex">\(D\)</span> 的所有内点处可微，则对 <span class="arithmatex">\(D\)</span> 内任意两点 <span class="arithmatex">\(P_0(x_0,y_0),P_(x+\Delta x,y+\Delta y)\)</span>，<span class="arithmatex">\(\exists\theta\in(0,1)\)</span> 使得</p>
+<p>二元函数拉格朗日中值公式：设函数 <span class="arithmatex">\(f(x,y)\)</span> 在凸开域 <span class="arithmatex">\(D\)</span> 上连续，在 <span class="arithmatex">\(D\)</span> 的所有内点处可微，则对 <span class="arithmatex">\(D\)</span> 内任意两点 <span class="arithmatex">\(P_0(x_0,y_0),P_0(x+\Delta x,y+\Delta y)\)</span>，<span class="arithmatex">\(\exists\theta\in(0,1)\)</span> 使得</p>
 <p><span class="arithmatex">\(\begin{aligned}&amp;f(x_0+\Delta x,y_0+\Delta y) - f(x_0,y_0) \\=&amp;\Delta x f'_x(x_0+\theta \Delta x,y_0+\theta\Delta y) +\Delta y f'_y(x_0+\theta\Delta x,y_0+\theta\Delta y)\end{aligned}\)</span></p>
 <details class="note">
 <summary>证明</summary>
@@ -2172,7 +2172,7 @@
 <li>
 <p>求函数 <span class="arithmatex">\(z = f(x,y)\)</span> 在约束条件 <span class="arithmatex">\(\varphi(x,y)=0\)</span> 下的条件极值。</p>
 <p>引入拉格朗日函数 <span class="arithmatex">\(F(x,y,\lambda) = f(x,y) + \lambda \varphi(x,y)\)</span>， 其中 <span class="arithmatex">\(\lambda\)</span> 为参数，</p>
-<p><span class="arithmatex">\(\begin{cases}    F'_x = f'_x(x,y) + \lambda \varphi'_x(x,y) \xlongequal 令 0 \\    F'_y = f'_y(x,y) + \lambda \varphi'_y(x,y) \xlongequal 令 0 \\    F'_\lambda = \varphi(x,y) \xlongequal 令 0    \end{cases}\)</span></p>
+<p><span class="arithmatex">\(\begin{cases}    F'_x = f'_x(x,y) + \lambda \varphi'_x(x,y) \xlongequal 令 0 \\   F'_y = f'_y(x,y) + \lambda \varphi'_y(x,y) \xlongequal 令 0 \\   F'_\lambda = \varphi(x,y) \xlongequal 令 0      \end{cases}\)</span></p>
 <p>解出 <span class="arithmatex">\(x,y,\lambda\)</span>，其中 <span class="arithmatex">\((x,y)\)</span> 就是可能的极值点坐标。</p>
 <details class="note">
 <summary>证明</summary>
@@ -2187,6 +2187,7 @@
 <details class="warning" open="open">
 <summary>注意</summary>
 <p>注意极值可能不是最值。</p>
+<p>最值：考察所有驻点、无偏导点、区域的边界点。</p>
 </details>
 </li>
 <li>
@@ -2439,7 +2440,7 @@
 <p>显式曲面：设曲面方程为 <span class="arithmatex">\(z=f(x,y)\)</span>，若 <span class="arithmatex">\(f\)</span> 具有一阶连续偏导数，令 <span class="arithmatex">\(F(x,y,z)=f(x,y)-z\)</span>，<span class="arithmatex">\(F'_x=f'_x，F'_y=f'_y，F'_z=-1\)</span>，法矢量 <span class="arithmatex">\(\vec{n} = \{f'_x,f'_y,-1\}\)</span>，曲面在 <span class="arithmatex">\(M\)</span> 处的切平面方程为 <span class="arithmatex">\(f'_x(x_0,y_0)(x-x_0) + f'_y(x_0,y_0)(y-y_0) = z-z_0\)</span>，曲面在 <span class="arithmatex">\(M\)</span> 处的法线方程为 <span class="arithmatex">\(\frac{x-x_0}{f'_x(x_0,y_0)} = \frac{y-y_0}{f'_y(x_0,y_0)} = \frac{z-z_0}{-1}\)</span>。</p>
 </li>
 <li>
-<p>参数曲面：设空间曲面 <span class="arithmatex">\(S:\begin{cases}x=x(u,v)\\y=y(u,v)\\z=z(u,v)\end{cases}\)</span>，<span class="arithmatex">\((u,v)\in D_{uv}\)</span>，且 <span class="arithmatex">\(x(u,v),y(u,v),z(u,v)\)</span> 均有一阶连续偏导数，曲面 <span class="arithmatex">\(S\)</span> 上给定点 <span class="arithmatex">\(M(x_0,y_0,z_0)\)</span> 所对应的参数为 <span class="arithmatex">\((u_0,v_0)\)</span>，则参数方程中取定参数 <span class="arithmatex">\(v=v_0\)</span> 或 <span class="arithmatex">\(u=u_0\)</span> 得到两条曲线，且切矢量分别为 <span class="arithmatex">\(\vec{s_u}=\{x_u'(x_0,v_0),y_u'(u_0,v_0),z_u'(u_0,v_0)\},\vec{s_v}=\{x_v'(u_0,v_0),y_v'(u_0,v_0),z_v'(u_0,v_0)\}\)</span>，则曲面在点 <span class="arithmatex">\(M_0\)</span> 处切平面的法矢量 <span class="arithmatex">\(\vec n=\vec{s_u}'\times \vec{s_v}'=\begin{vmatrix}\vec i&amp;\vec j&amp;\vec k\\x_u'&amp;y_u'&amp;z_u'\\x_v'&amp;y_v'&amp;z_v'\end{vmatrix}=\frac{\partial(y,z)}{\partial(u,v)}\vec i+\frac{\partial (z,x)}{\partial (u,v)}\vec j+\frac{\partial(x,y)}{\partial(u,v)}\vec k\)</span>。</p>
+<p>参数曲面：设空间曲面 <span class="arithmatex">\(S:\begin{cases}x=x(u,v)\\y=y(u,v)\\z=z(u,v)\end{cases}\)</span>，<span class="arithmatex">\((u,v)\in D_{uv}\)</span>，且 <span class="arithmatex">\(x(u,v),y(u,v),z(u,v)\)</span> 均有一阶连续偏导数，曲面 <span class="arithmatex">\(S\)</span> 上给定点 <span class="arithmatex">\(M(x_0,y_0,z_0)\)</span> 所对应的参数为 <span class="arithmatex">\((u_0,v_0)\)</span>，则参数方程中取定参数 <span class="arithmatex">\(v=v_0\)</span> 或 <span class="arithmatex">\(u=u_0\)</span> 得到两条曲线，且切矢量分别为 <span class="arithmatex">\(\vec{s_u}=\{x_u'(x_0,v_0),y_u'(u_0,v_0),z_u'(u_0,v_0)\},\vec{s_v}=\{x_v'(u_0,v_0),y_v'(u_0,v_0),z_v'(u_0,v_0)\}\)</span>，则曲面在点 <span class="arithmatex">\(M_0\)</span> 处切平面的法矢量 <span class="arithmatex">\(\vec n=\vec{s_u}\times \vec{s_v}=\begin{vmatrix}\vec i&amp;\vec j&amp;\vec k\\x_u'&amp;y_u'&amp;z_u'\\x_v'&amp;y_v'&amp;z_v'\end{vmatrix}=\frac{\partial(y,z)}{\partial(u,v)}\vec i+\frac{\partial (z,x)}{\partial (u,v)}\vec j+\frac{\partial(x,y)}{\partial(u,v)}\vec k\)</span>。</p>
 </li>
 <li>
 <p>全微分的几何意义：曲面 <span class="arithmatex">\(z = f(x,y)\)</span> 在点 <span class="arithmatex">\(M(x_0,y_0,z_0)\)</span> 处的切平面方程为 <span class="arithmatex">\(f'_x(x_0,y_0)(x - x_0) + f'_y(x_0,y_0)(y - y_0) = z - z_0\)</span>。</p>
