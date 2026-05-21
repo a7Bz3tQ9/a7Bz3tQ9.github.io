@@ -40,6 +40,7 @@ nav:
   #     - 二分: 专题训练/其他/二分.md
   #     - 整体二分: 专题训练/其他/整体二分.md
   #     - 分治: 专题训练/其他/分治.md
+
 theme:
   name: material
   language: 'zh'
