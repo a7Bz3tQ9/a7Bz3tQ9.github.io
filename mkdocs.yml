@@ -44,8 +44,10 @@ nav:
 theme:
   name: material
   language: 'zh'
+  
+  # Palette toggle 浅色/深色切换
   palette:
-    # Palette toggle for light mode
+    # 浅色模式
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: white
@@ -53,8 +55,7 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
+    # 深色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: blue
@@ -62,15 +63,17 @@ theme:
       toggle:
         icon: material/weather-night
         name: Switch to light mode
+
+  # 注意：features 的缩进已修正，与 name, palette 对齐
   features:
     - search
     - content.action.edit
     - navigation.tabs
     - navigation.instant
-    - navigation.top # 返回顶部的按钮 在上滑时出现
-    - content.code.copy #代码复制
-    - search.suggest # 搜索输入一些字母时推荐补全整个单词
-    - search.highlight # 搜索出的文章关键词加入高亮
+    - navigation.top        # 返回顶部按钮
+    - content.code.copy     # 代码复制
+    - search.suggest        # 搜索自动补全
+    - search.highlight      # 搜索关键词高亮
     - search.share
     - navigation.tracking
 
@@ -79,25 +82,24 @@ theme:
     code: 'Fira Mono'
 
 extra_css:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css  # KaTeX样式
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css
   - stylesheets/extra.css
 
 extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js   # KaTeX核心
-  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js  # 自动渲染
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js
   - javascripts/katex.js
 
 plugins:
   - search
 
-markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown-extensions/ 和 https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/
+markdown_extensions:
   - abbr
   - attr_list
   - admonition
   - def_list
   - footnotes
   - md_in_html
-  # - meta # 支持Markdown文件上方自定义标题标签等
   - pymdownx.caret
   - pymdownx.betterem
   - pymdownx.critic
@@ -112,16 +114,13 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       custom_fences:
         - name: mermaid
           class: mermaid
-          format:
-            !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
-  - pymdownx.arithmatex: # latex支持
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
       generic: true
   - toc:
-      permalink: true # 固定标题位置为当前位置
-  - pymdownx.highlight: # 代码块高亮
+      permalink: true
+  - pymdownx.highlight:
       anchor_linenums: true
-      # linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -129,7 +128,3 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
-  # - markdown.extensions.toc:
-  #     slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
-  #     permalink: "\ue157"
-
